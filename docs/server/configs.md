@@ -17,21 +17,23 @@ player-idle-timeout=30
 Подробнее о каждом параметре https://bukkit.fandom.com/wiki/Bukkit.yml/ru
 ```YML
 spawn-limits: # Количество мобов на игрока
-  monsters: 70 # Монстры 
-  animals: 10 # Животные
-  water-animals: 5 # Водные животные (Дельфины, спруты, ...) 
-  water-ambient: 10 # Водные животные (Рыбы)
-  water-underground-creature: 5 # Водные животные (Светящийся спрут)
-  axolotls: 5 # Оксылотл 
-  ambient: 10 # Окружение (Летучие мыши)
+  monsters: 40 # Монстры 
+  animals: 5 # Животные
+  water-animals: 2 # Водные животные (Дельфины, спруты, ...) 
+  water-ambient: 3 # Водные животные (Рыбы)
+  water-underground-creature: 2 # Водные животные (Светящийся спрут)
+  axolotls: 2 # Оксылотл 
+  ambient: 4 # Окружение (Летучие мыши)
 ticks-per: # Количество тиков на спавн моба
-  animal-spawns: 100 # 5 сек
+  animal-spawns: 300 # 15 сек
   monster-spawns: 10 # 0,5 сек
-  water-spawns: 100 # 5 сек
-  water-ambient-spawns: 100 # 5 сек
-  water-underground-creature-spawns: 100 # 5 сек
-  axolotl-spawns: 100 # 5 сек
-  ambient-spawns: 100 # 5 сек
+  water-spawns: 300 # 15 сек
+  water-ambient-spawns: 300 # 15 сек
+  water-underground-creature-spawns: 300 # 15 сек
+  axolotl-spawns: 300 # 15 сек
+  ambient-spawns: 300 # 15 сек
+chunk-gc:
+  period-in-ticks: 400
 ```
 
 ## spigot.yml
@@ -90,7 +92,7 @@ chunk-system:
   io-threads: 3
   worker-threads: 2
 threaded-regions:
-  threads: 12
+  threads: 6
 item-validation: 
   book-size:
     page-max: 1280 # Ограничение в байтах на резмер книг
@@ -107,8 +109,7 @@ unsupported-settings:
 Подробнее о каждом параметре https://docs.papermc.io/paper/reference/world-configuration
 ```YML
 chunks:
-  auto-save-interval: 6000 # Авто сейв чанков на диск
-  delay-chunk-unloads-by: 10s # Время через которое выгружаются неактивные чанки из ОЗУ сервера
+  delay-chunk-unloads-by: 7s # Время через которое выгружаются неактивные чанки из ОЗУ сервера
   entity-per-chunk-save-limit:
     area_effect_cloud: 8
     arrow: 16
@@ -128,7 +129,7 @@ chunks:
     spectral_arrow: 16
     trident: 16
     wither_skull: 4
-  max-auto-save-chunks-per-tick: 8
+  max-auto-save-chunks-per-tick: 60
   prevent-moving-into-unloaded-chunks: true
 entities:
   behavior:
@@ -167,6 +168,7 @@ entities:
 environment:
   optimize-explosions: true
 fixes:
+  fix-items-merging-through-walls: true
   disable-unloaded-chunk-enderpearl-exploit: true
   fix-curing-zombie-villager-discount-exploit: true
   split-overstacked-loot: true
@@ -177,7 +179,7 @@ misc:
   redstone-implementation: ALTERNATE_CURRENT # Достаточно ванильное поведение редстоуна, но могут быть отличия
   update-pathfinding-on-block-update: false
 spawn:
-  keep-spawn-loaded: true # Спавн чанки включены, то есть они прогружаются 24/7
+  keep-spawn-loaded: false # Спавн чанки выключены, то есть они не прогружаются 24/7
 tick-rates:
   behavior:
     villager:
