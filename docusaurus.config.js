@@ -101,7 +101,7 @@ const config = {
               },
               {
                 label: 'Настройки сервера',
-                to: '/docs/category/сервер',
+                to: '/docs/server',
               },
             ],
           },
