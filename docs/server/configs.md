@@ -8,9 +8,8 @@ sidebar_position: 2
 ```dotenv
 difficulty=hard
 allow-flight=true
-view-distance=10
+view-distance=8
 simulation-distance=4
-player-idle-timeout=30
 ```
 
 ## bukkit.yml
@@ -89,10 +88,8 @@ chunk-loading-basic:
   player-max-chunk-send-rate: 75.0
 chunk-system:
   gen-parallelism: default
-  io-threads: 3
-  worker-threads: 2
-threaded-regions:
-  threads: 6
+  io-threads: 12
+  worker-threads: 6
 item-validation: 
   book-size:
     page-max: 1280 # Ограничение в байтах на резмер книг
@@ -109,7 +106,7 @@ unsupported-settings:
 Подробнее о каждом параметре https://docs.papermc.io/paper/reference/world-configuration
 ```YML
 chunks:
-  delay-chunk-unloads-by: 7s # Время через которое выгружаются неактивные чанки из ОЗУ сервера
+  delay-chunk-unloads-by: 10s # Время через которое выгружаются неактивные чанки из ОЗУ сервера
   entity-per-chunk-save-limit:
     area_effect_cloud: 8
     arrow: 16
@@ -183,13 +180,19 @@ spawn:
 tick-rates:
   behavior:
     villager:
-      validatenearbypoi: -1
+      acquirepoi: 120
+      validatenearbypoi: 60
   container-update: 1
+  dry-farmland: 1
   grass-spread: 4
-  mob-spawner: 2
+  mob-spawner: 4
   sensor:
     villager:
-      secondarypoisensor: 40
+      nearestbedsensor: 80
+      nearestlivingentitysensor: 40
+      playersensor: 40
+      secondarypoisensor: 80
+      villagerbabiessensor: 40
 unsupported-settings:
   fix-invulnerable-end-crystal-exploit: true
 ```
