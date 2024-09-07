@@ -126,11 +126,11 @@ chunks:
     spectral_arrow: 16
     trident: 16
     wither_skull: 4
-  max-auto-save-chunks-per-tick: 60
+  max-auto-save-chunks-per-tick: 16
   prevent-moving-into-unloaded-chunks: true
 entities:
   behavior:
-    nerf-pigmen-from-nether-portals: true
+    nerf-pigmen-from-nether-portals: false
   spawning:
     creative-arrow-despawn-rate: 400
     despawn-ranges:
@@ -175,8 +175,6 @@ hopper:
 misc:
   redstone-implementation: ALTERNATE_CURRENT # Достаточно ванильное поведение редстоуна, но могут быть отличия
   update-pathfinding-on-block-update: false
-spawn:
-  keep-spawn-loaded: false # Спавн чанки выключены, то есть они не прогружаются 24/7
 tick-rates:
   behavior:
     villager:
