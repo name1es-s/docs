@@ -78,6 +78,11 @@ const config = {
             label: 'Сервер',
           },
           {
+            href: 'https://buy.subserver.ru',
+            label: 'Купить проходку',
+            position: 'right',
+          },
+          {
             href: 'https://karta.subserver.ru',
             label: 'Карта',
             position: 'right',
