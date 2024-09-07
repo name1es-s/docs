@@ -66,10 +66,21 @@ const config = {
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'doc',
+            docId: 'rules/index',
             position: 'left',
-            label: 'Вики',
+            label: 'Правила',
+          },
+          {
+            type: 'doc',
+            docId: 'server',
+            position: 'left',
+            label: 'Сервер',
+          },
+          {
+            href: 'https://buy.subserver.ru',
+            label: 'Купить проходку',
+            position: 'right',
           },
           {
             href: 'https://karta.subserver.ru',
@@ -77,18 +88,8 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://github.com/melharucos/docs',
+            href: 'https://github.com/melharucos',
             label: 'GitHub',
-            position: 'right',
-          },
-          {
-            href: 'https://www.twitch.tv/melharucos',
-            label: 'Twitch',
-            position: 'right',
-          },
-          {
-            href: 'https://t.me/melhagram',
-            label: 'Telegram',
             position: 'right',
           },
         ],
@@ -100,8 +101,12 @@ const config = {
             title: 'Вики',
             items: [
               {
-                label: 'Документация',
-                to: '/docs/intro',
+                label: 'Правила',
+                to: '/docs/rules',
+              },
+              {
+                label: 'Настройки сервера',
+                to: '/docs/server',
               },
             ],
           },
